@@ -45,25 +45,23 @@ function UpdateUsers() {
     })
     const update = (e)=>{
         e.preventDefault()
-        axios.put('http://localhost:3001/updateUser'+id, {task, email, description, date})
+        axios.put('http://localhost:3001/updateUser/'+id, {task, email, description, date})
         .then(result => console.log(result))
         navigate('/')
-        .catch(err => console.log(err))
+        // .catch(err => console.log(err))
 
 
     }
 
   return (
-    <div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>
-        <div className='w-50 bg-white rounded p-3'>
+    <div className='d-flex vh-100 bg-dark justify-content-center align-items-center'>
+        /<div className='w-50 bg-white rounded p-3'>
             <form onSubmit={update}>
                 <h2>Update</h2>
                 <div className='mb-3'>
                     <label htmlFor=''>Task Name</label>
                     <input type='text'  placeholder='Enter Task Name' className='form-control'
-                    value={task} 
-                    
-                    onChange={e=> setTask(e.target.value)}
+                    Value={task} onChange={(e)=> setTask(e.target.value)}
                     />
                     
 
@@ -71,13 +69,13 @@ function UpdateUsers() {
                 <div className='mb-3'>
                     <label htmlFor=''>Email</label>
                     <input type='email' placeholder='Enter Email' className='form-control'
-                    value={email} onChange={(e)=> setEmail(e.target.value)}/>
-                    
+                    value={email} onChange={(e)=> e.target.value} 
+                    />                
                 </div>
                 <div className='mb-3'>
                     <label htmlFor=''>Description</label>
                     <input type='text' placeholder='Enter the Description' className='form-control'
-                    value={description} onChange={(e)=> setDescription(e.target.value)}/>
+                   value={description}  onChange={(e)=> e.target.value}/>
                     
                 </div>
                 {/* <div className='mb-3'>
@@ -89,16 +87,16 @@ function UpdateUsers() {
                 
                 <div className='mb-3'>
                     <label htmlFor='' >Date</label>
-                    <input type='date'  className='form-control' onChange={(e)=> setDate(e.target.value)}
-                    value={date}/>
+                    <input type='date'  className='form-control' value={date} 
+                    onChange={(e)=> e.target.value}/>
                     
                 </div>
                 <button className='btn-btn-success'>Update</button>
             </form>
 
-        </div>
+         </div> 
 
-    </div>
+     </div> 
   )
 }
 

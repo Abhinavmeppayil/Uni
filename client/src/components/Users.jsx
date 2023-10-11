@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Users() {
    const [users, setUser] = useState([]);
@@ -23,6 +24,15 @@ function Users() {
 
     fetchUsers();
   }, []);
+
+  const handleDelete=(id)=>{
+    axios.delete('http://localhost:3001/deleteUser/'+id)
+    .then(res => console.log(res))
+      // window.location.reload()})
+    .catch(errr => console.log(errr))
+
+
+  }
   return (
     // <div>
     //   <Link
@@ -101,7 +111,7 @@ function Users() {
             <td>{user.date}</td>
             {/* <td><button>Pending</button><button>Complete</button></td> */}
             <td>
-              <Link to={`/update/${user._id}`}><button style={{borderRadius:'5px'}}>Update</button><button style={{borderRadius:'5px'}}>Delete</button></Link></td>
+              <Link to={`/update/${user._id}`}><button style={{borderRadius:'5px'}}>Update</button><button style={{borderRadius:'5px', marginLeft:'10px'}} onClick={(e)=> handleDelete(user._id)}>Delete</button></Link></td>
 
           </tr>
         )
