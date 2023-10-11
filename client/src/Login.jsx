@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Register.css'
 
 function Login() {
+
+	const[password , setPassword] = useState()	
+	const [email, setEmail] = useState()
 
   
   return (
@@ -20,11 +23,13 @@ function Login() {
 					<div class="row">
 						<form control="" class="form-group">
 							<div class="row">
-								<input type="text" name="username" id="username" class="form__input" placeholder="Username"/>
+								<input type="text" name="username" id="username" class="form__input" placeholder="Username" value={email}
+								onChange={(e)=> e.target.value}/>
 							</div>
 							<div class="row">
 								<span class="fa fa-lock"></span> 
-								<input type="password" name="password" id="password" class="form__input" placeholder="Password"/>
+								<input type="password" name="password" id="password" class="form__input" placeholder="Password"
+								value={password} onChange={(e)=> e.target.value}/>
 							</div>
 							<div class="row">
 								<input type="checkbox" name="remember_me" id="remember_me" class=""/>
