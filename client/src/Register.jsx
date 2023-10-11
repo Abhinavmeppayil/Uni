@@ -67,17 +67,7 @@ function Register() {
                     onChange={(e)=> setPassword(e.target.value)}
                   />
                 </div>
-                <div class="row">
-                  <span class="fa fa-lock"></span>
-                  <input
-                    type="date"
-                    name="date"
-                    id="date"
-                    class="form__input"
-                    placeholder="Password"
-                    onChange={(e)=> setPassword(e.target.value)}
-                  />
-                </div>
+               
 
                 {/* <div class="row">
 								<input type="checkbox" name="remember_me" id="remember_me" class=""/>

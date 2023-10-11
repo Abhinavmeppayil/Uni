@@ -1,9 +1,10 @@
 .log{
-	border-radius: 30px;
+	border-radius: 10px;
+	width: 100px;
 	color:white;
 	font-weight: 600;
 	background-color: black;
-	border: 1px solid #008080;
+	/* border: 1px solid #008080; */
     display: block;
 	text-decoration: none;
     
